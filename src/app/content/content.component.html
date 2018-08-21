@@ -1,0 +1,25 @@
+<div [ngSwitch]="content" >
+  <div *ngSwitchCase="'home'">
+    <div>
+       <!--  {{homeInfo}} -->
+	  </div>
+  </div>
+
+  <div *ngSwitchCase="'time_table'" >
+    <h1> Timetable Info: </h1>
+    <button class=" btn btn-primary" (click)="onDisplay('morning')" >Morning Time</button>
+    <button class="btn btn-dark" (click)="onDisplay('evening')">Evening Time</button>
+  </div>
+
+  <div *ngSwitchCase="'places'" >
+    <h1> Place Info: </h1>
+    <button class=" btn btn-primary" (click)="onDisplay('insidecity')">Inside City</button>
+    <button class="btn btn-dark" (click)="onDisplay('outsidecity')">Outside City</button>
+  </div>
+
+  <div *ngSwitchDefault></div>
+</div>
+
+<app-display [displaySelected] = "displaySelection"></app-display>
+
+

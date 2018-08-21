@@ -1,0 +1,130 @@
+<div [ngSwitch]="displaySelected">
+  <div *ngSwitchCase="'morning'">
+    <div class="container">
+      <hr>
+      <h2><span class="text-white bg-primary">Morning Time Table</span></h2>
+      <table class="table">
+        <thead class="bg-info">
+        <tr class="text-white">
+          <th>Timing</th>
+          <th>Event</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let time of morningTimes" class="bg-light">
+          <td>{{ time.time }}</td>
+          <td>{{ time.events }}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div *ngSwitchCase="'evening'" >
+    <div class="container">
+      <hr>
+      <h2><span class="text-white bg-dark">Evening Time Table</span></h2>
+      <table class="table">
+        <thead class="bg-info">
+        <tr class="text-white">
+          <th>Timing</th>
+          <th>Event</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let time of eveningTimes" class="bg-light">
+          <td>{{ time.time }}</td>
+          <td>{{ time.events }}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div *ngSwitchCase="'insidecity'" >
+    <!--
+    <div class="container">
+      <h2></h2>
+      <table class="table">
+        <thead class="bg-info">
+        <tr class="text-white">
+          <th>List of places inside of Dwarka</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let place of placesInside" class="bg-light">
+          <td>{{ place.name }}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    -->
+    <hr>
+    <div class="card bg-faded">
+      <table class="table">
+        <thead class="bg-info">
+        <tr class="text-white">
+          <th>List of places inside of Dwarka</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let place of  placesInside" class="bg-light">
+          <td>
+            <div class="card">
+              <div class="card-body">
+                <h6 class="card-title"><span class="text-danger">{{ place.name }}</span></h6>
+              </div>
+            </div>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+
+  <div *ngSwitchCase="'outsidecity'" >
+    <hr>
+    <div class="card bg-faded">
+      <table class="table">
+        <thead class="bg-info">
+        <tr class="text-white">
+          <th>List of places ouside of Dwarka</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let place of placesOutside" class="bg-light">
+          <td>
+            <div class="card">
+              <div class="card-body">
+                <h6 class="card-title"><span class="text-danger">{{ place.name }}</span></h6>
+              </div>
+            </div>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+<!--
+    <div class="container">
+      <h2></h2>
+      <table class="table">
+        <thead class="bg-info">
+        <tr class="text-white">
+          <th>List of places ouside of Dwarka</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let place of placesOutside" class="bg-light">
+          <td>{{ place.name }}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+    -->
+  </div>
+  <div *ngSwitchDefault></div>
+</div>

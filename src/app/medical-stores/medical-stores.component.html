@@ -1,0 +1,25 @@
+<div class="card bg-faded">
+  <table class="table">
+    <thead class="bg-info">
+      <tr class="text-white">
+        <th>List of Medical Store</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let store of medicalStores" class="bg-light">
+        <td>
+          <div class="card">
+            <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+            <div class="card-body">
+              <h4 class="card-title"><span class="text-danger">{{ store.name }}</span></h4>
+              <hr>
+              <p class="card-text"><span class="text-primary">{{store.address.line1}}</span></p>
+              <p class="card-text"><span class="text-primary">{{store.address.line2}}</span></p>
+              <p class="card-text"><span class="text-white bg-dark">contact no: {{store.contact}}</span></p>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

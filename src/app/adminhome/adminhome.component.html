@@ -1,0 +1,79 @@
+<app-nav-bar></app-nav-bar>
+
+<div class="jumbotron" *ngIf="!viewOn">
+
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">
+      <div class="row">
+        <div class="col-sm">
+          Home
+        </div>
+        <div class="col-sm">
+          <a [routerLink]="['/admin/home','update']">update</a>
+        </div>
+        <div class="col-sm">
+        </div>
+      </div>
+    </li>
+    <li class="list-group-item">
+      <div class="row">
+        <div class="col-sm">Time Table</div>
+        <div class="col-sm"><a [routerLink]="['/admin/home','timetableUpdate']">update</a></div>
+        <div class="col-sm"><a>new</a></div>
+      </div>
+    </li>
+    <li class="list-group-item">
+      <div class="row">
+        <div class="col-sm">Places</div>
+        <div class="col-sm"><a [routerLink]="['/admin/home','placeUpdate']">update</a></div>
+        <div class="col-sm"><a>new</a></div>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<div class="jumbotron" *ngIf="viewOn === 'update'">
+  <form [formGroup]="formHome" (ngSubmit)="updateHomeContent()">
+    <div class="form-group">
+      <label for="details">Update Home Content</label>
+      <textarea class="container"
+             formControlName="name"
+             id="details"
+             type="text">
+      </textarea>
+    </div>
+    <button class="btn btn-primary" type="submit">Submit</button>
+  </form>
+</div>
+
+<div class="jumbotron" *ngIf="viewOn === 'timetableUpdate'">
+  <form [formGroup]="formHome" (ngSubmit)="updateHomeContent()">
+    <div class="form-group">
+      <label for="timeTable">Update Time Table</label>
+      <textarea class="container"
+                formControlName="name"
+                id="timeTable"
+                type="text">
+      </textarea>
+    </div>
+    <button class="btn btn-primary" type="submit">Submit</button>
+  </form>
+</div>
+
+<div class="jumbotron" *ngIf="viewOn === 'placeUpdate'">
+  <div class="text-capitalize text-center"></div>
+  <div class="row">
+    <div class="col-md-8 form-group"><h1 class="text-justify">Update Place Information</h1></div>
+  </div>
+      <div *ngFor="let place of places" class="container">
+          <div class="row">
+            <div class="col-md-8 form-group">
+              <input class="form-control" [value]="place.name" type="text" #name>
+            </div>
+            <div class="col-md-4 form-group">
+              <button class="btn btn-primary" [value]="place.id" (click)="updatePlace(id.value,name.value)" #id>Submit</button>
+            </div>
+          </div>
+      </div>
+</div>
+

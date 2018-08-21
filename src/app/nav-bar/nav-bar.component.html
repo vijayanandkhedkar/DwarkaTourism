@@ -1,0 +1,26 @@
+<nav class="navbar navbar-dark bg-dark">
+  <a class="navbar-brand" routerLink=""> Dwarka Tourism</a>
+  <button class="navbar-toggler ml-auto" type="button" (click)="onCollapsed()" data-toggle="collapse">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="navbar-collapse" *ngIf="!isCollapsed">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link"  [routerLink]="['/content/home']" (click)="onCollapsed('home')">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/content','time_table']" (click)="onCollapsed('time_table')">Time Table</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/content','places']" (click)="onCollapsed('places')">Places</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/content/medicalstore']" (click)="onCollapsed()">Medical Stores</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+

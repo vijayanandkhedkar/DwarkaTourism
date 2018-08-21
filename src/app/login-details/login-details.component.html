@@ -1,0 +1,25 @@
+<app-nav-bar></app-nav-bar>
+
+<div class="jumbotron">
+  <form [formGroup]="form" (ngSubmit)="login()">
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input class="container"
+             formControlName="username"
+             id="username"
+             type="text">
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password </label>
+      <input class="container"
+             formControlName="password"
+             id="password"
+             type="password">
+    </div>
+
+    <button class="btn btn-primary" type="submit">Submit</button>
+  </form>
+</div>
+
+
